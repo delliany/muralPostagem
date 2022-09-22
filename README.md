@@ -12,10 +12,15 @@ Apresentar as postagens feitas pelos usuários com os comentário, curtidas, viw
 - Eclipse
 - H2
 
+Foi optado em utilizar essa tecnologias por ser bastante usadas no mercado de trabalho, por ter experência e tambem por ser uma aplicação simples não precisaria uma tecnologia mais robusta, como no caso da utilização do banco de dados H2 que é nativa na configuração do Spring Boot e é simples de usar.
+Próxima etapa será a criação da parte de frontend em uma versão Angular 12 e outra em React 18
+
+
 ## Teste da Aplicação
 
-Executa pelo Spring Boot e testa as requisições pelo PostMan ou software semelhante
+Executa pelo Spring Boot e testa as requisições pelo PostMan ou aplicativo semelhante
 No Eclipse - Spring application - Run As - Java Application
+
 A aplicação irá inserir 2 usuários no banco de dados
 
 ![image](https://user-images.githubusercontent.com/7042663/191817113-ec1cf5a0-fb5e-4d53-91ff-adb52887c89f.png)
@@ -96,7 +101,7 @@ json
   "title": "Primeiro Post",
   "description": "Texto Post"
 }
-
+```
 
 #### PUT editar-post
 
@@ -151,18 +156,95 @@ Deletar dinamicamente o comentário
 http://localhost:8080/mural-postagem/deletar-comentario
 
 ```sh
-json
+json resposta
 {
     "id": 1,
     "user": {
-        "id": 1
+        "id": 1,
+        "name": "Pedro Silva",
+        "email": "pedro@gmail.com",
+        "password": "12345678",
+        "hasAuthorization": false,
+        "hibernateLazyInitializer": {}
     },
     "post": {
         "id": 1,
         "user": {
-            "id": 2
-        }
+            "id": 2,
+            "name": "Maria Vitoria",
+            "email": "maria@gmail.com",
+            "password": "87654321",
+            "hasAuthorization": true,
+            "hibernateLazyInitializer": {}
+        },
+        "title": "Primeiro Post",
+        "description": "Texto Post",
+        "photo": null,
+        "likes": 0,
+        "dislikes": 0,
+        "views": 0,
+        "hibernateLazyInitializer": {}
     },
-    "description": "Primeiro comentário"
+    "description": "Primeiro comentário",
+    "deleteType": "USER",
+    "labelDeleteType": "Comentário deletado pelo usuário do comentário"
 }
 ```
+
+
+#### PUT curtir-post
+
+Curtir uma postagem
+
+http://localhost:8080/mural-postagem/curtir-post
+
+```sh
+json Resposta
+{
+    "id": 1,
+    "user": {
+        "id": 1,
+        "name": "Pedro Silva",
+        "email": "pedro@gmail.com",
+        "password": "12345678",
+        "hasAuthorization": false,
+        "hibernateLazyInitializer": {}
+    },
+    "title": "Primeiro Post",
+    "description": "Texto Post atualizado",
+    "photo": null,
+    "likes": 1,
+    "dislikes": 0,
+    "views": 0
+}
+```
+
+
+#### PUT descurtir-post
+
+Não curtir uma postagem
+
+http://localhost:8080/mural-postagem/descurtir-post
+
+```sh
+json Resposta
+{
+    "id": 1,
+    "user": {
+        "id": 1,
+        "name": "Pedro Silva",
+        "email": "pedro@gmail.com",
+        "password": "12345678",
+        "hasAuthorization": false,
+        "hibernateLazyInitializer": {}
+    },
+    "title": "Primeiro Post",
+    "description": "Texto Post atualizado",
+    "photo": null,
+    "likes": 0,
+    "dislikes": 1,
+    "views": 0
+}
+```
+
+
