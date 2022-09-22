@@ -20,7 +20,7 @@ Próxima etapa será a criação da parte de frontend em uma versão Angular 12 
 
 Executa pelo Spring Boot e testa as requisições pelo PostMan ou aplicativo semelhante
 
-No Eclipse - MuralPostagemApplication - Run As - Java Application
+No Eclipse - `MuralPostagemApplication.java` - Run As - Java Application
 
 No terminal na pasta da aplicação 
 ```sh  
