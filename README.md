@@ -19,9 +19,15 @@ Próxima etapa será a criação da parte de frontend em uma versão Angular 12 
 ## Teste da Aplicação
 
 Executa pelo Spring Boot e testa as requisições pelo PostMan ou aplicativo semelhante
-No Eclipse - Spring application - Run As - Java Application
 
-A aplicação irá inserir 2 usuários no banco de dados
+No Eclipse - MuralPostagemApplication - Run As - Java Application
+
+No terminal na pasta da aplicação 
+```sh  
+mvn spring-boot:run 
+```
+
+A aplicação irá inserir 2 usuários no banco de dados ao inicializar a aplicação
 
 ![image](https://user-images.githubusercontent.com/7042663/191817113-ec1cf5a0-fb5e-4d53-91ff-adb52887c89f.png)
 
